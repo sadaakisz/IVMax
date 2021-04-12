@@ -33,10 +33,10 @@ def Selection(N):
 
 #Calcula idoneidad según la suma de los IVs de un individuo
 def Fitness(iv_group):
-    average_ivs=0
+    iv_sum = 0
     for i, _ in enumerate(iv_group):
-        average_ivs+=iv_group[i]
-    return average_ivs
+        iv_sum += iv_group[i]
+    return iv_sum
 
 #Cruza a 2 individuos, asignando el punto de corte de los IVs y generando
 #2 hijos
@@ -59,4 +59,18 @@ def Breed(N):
             Subjects[k] = Child1
             Subjects[v] = Child2
         item = item+1
+    Show(N)
+
+def Mutation(N):
+    print('-----Mutation ----')
+    for i in range(int(N/2)):
+        ChooseSubj = random.randint(0,N-1)
+        #print(ChooseSubj)
+        ChoosePos = random.randint(0,5)
+        #print(ChoosePos)
+        ChooseVal = random.randint(0, 31)
+        #print(ChooseVal)
+        Subjects[ChooseSubj][ChoosePos] = ChooseVal
+        print('The subject {}, in the position {}, with a value of {}, was mutated'.format(ChooseSubj, ChoosePos, ChooseVal))
+        #print("****")
     Show(N)

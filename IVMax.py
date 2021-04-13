@@ -1,16 +1,17 @@
 import numpy as np
 import random
+import math
 from copy import deepcopy as dc
-
-PokemonList=[]
-PokemonList.append(Pokemon("Torchic", [45, 60, 40, 70, 50, 45]))
-PokemonList.append(Pokemon("Squirtle", [44, 48, 65, 50, 64, 43]))
-PokemonList.append(Pokemon("Turtwig", [55, 68, 64, 45, 55, 31]))
 
 class Pokemon():
     def __init__(self, name, stats):
         self.name=name
         self.stats=dc(stats)
+
+PokemonList=[]
+PokemonList.append(Pokemon("Torchic", [45, 60, 40, 70, 50, 45]))
+PokemonList.append(Pokemon("Squirtle", [44, 48, 65, 50, 64, 43]))
+PokemonList.append(Pokemon("Turtwig", [55, 68, 64, 45, 55, 31]))
 
 def Pairs(N):
     # Retorna una lista en orden aleatoria de la segunda mitad de los individuos
@@ -97,9 +98,24 @@ def ShowBest(N):
     print("Best Subject:",Subjects[index])
     return Subjects[index]
 
-#def ShowStats(iv_group):
+def ShowStats(pkNumber, ivs):
+    # Se pueden pedir los EVs como input del usuario
+    # Pero habria que trabajar en las validaciones necesarias
+    # Por ahora no se esta tomando en cuenta el calculo con los EVs
+    baseStats=PokemonList[pkNumber].stats
+    stats=[]
+    # los calculos realizados son asumiendo que el pk es de nivel 100
+    # Y con el metodo de calculo de la generacion I y II
+    # HP Calculation
+    hp=math.floor((baseStats[0]+ivs[0])*100/100)+100+10
+    stats.append(hp)
 
+    for i in range(1, 6):
+        stats.append(math.floor((baseStats[i]+ivs[i])*100/100)+5)
+    
+    print("Stats:", stats)
 
+pkNumber=0
 N=6
 generations=5
 Inicialization(N)
@@ -109,3 +125,4 @@ for i in range(generations):
     Breed(N)
     Mutation(N)
     ShowBest(N)
+    ShowStats(pkNumber, ShowBest(N))

@@ -410,14 +410,20 @@ background-color: rgb(38, 36, 68);
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QFrame" name="IVStats">
+      <widget class="QFrame" name="IVCard">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>25</x>
          <y>450</y>
-         <width>1501</width>
-         <height>351</height>
+         <width>1450</width>
+         <height>320</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+background-color: rgb(33, 31, 63);
+border-radius: 60px;
+}</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -428,15 +434,15 @@ background-color: rgb(38, 36, 68);
        <widget class="QProgressBar" name="IVHP">
         <property name="geometry">
          <rect>
-          <x>270</x>
-          <y>130</y>
+          <x>260</x>
+          <y>60</y>
           <width>12</width>
-          <height>118</height>
+          <height>200</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QProgressBar {
-	background-color: rgba(255, 255, 255, 120);
+	background-color: rgba(0, 0, 0, 120);
     border: 0px transparent;
     border-radius: 6px;
 }
@@ -457,6 +463,209 @@ QProgressBar::chunk {
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
+       <widget class="QLabel" name="IVBackground">
+        <property name="geometry">
+         <rect>
+          <x>136</x>
+          <y>40</y>
+          <width>1250</width>
+          <height>240</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px transparent;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>assets/IVStatsTableArtboard.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="IVAtk">
+        <property name="geometry">
+         <rect>
+          <x>481</x>
+          <y>60</y>
+          <width>12</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar {
+	background-color: rgba(0, 0, 0, 120);
+    border: 0px transparent;
+    border-radius: 6px;
+}
+
+QProgressBar::chunk {
+	border: 0px transparent;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));
+	border-radius: 6px;
+}</string>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="IVDef">
+        <property name="geometry">
+         <rect>
+          <x>702</x>
+          <y>60</y>
+          <width>12</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar {
+	background-color: rgba(0, 0, 0, 120);
+    border: 0px transparent;
+    border-radius: 6px;
+}
+
+QProgressBar::chunk {
+	border: 0px transparent;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));
+	border-radius: 6px;
+}</string>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="IVSpAtk">
+        <property name="geometry">
+         <rect>
+          <x>921</x>
+          <y>60</y>
+          <width>12</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar {
+	background-color: rgba(0, 0, 0, 120);
+    border: 0px transparent;
+    border-radius: 6px;
+}
+
+QProgressBar::chunk {
+	border: 0px transparent;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));
+	border-radius: 6px;
+}</string>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="IVSpDef">
+        <property name="geometry">
+         <rect>
+          <x>1143</x>
+          <y>60</y>
+          <width>12</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar {
+	background-color: rgba(0, 0, 0, 120);
+    border: 0px transparent;
+    border-radius: 6px;
+}
+
+QProgressBar::chunk {
+	border: 0px transparent;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));
+	border-radius: 6px;
+}</string>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="IVSpd">
+        <property name="geometry">
+         <rect>
+          <x>1363</x>
+          <y>60</y>
+          <width>12</width>
+          <height>200</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar {
+	background-color: rgba(0, 0, 0, 120);
+    border: 0px transparent;
+    border-radius: 6px;
+}
+
+QProgressBar::chunk {
+	border: 0px transparent;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));
+	border-radius: 6px;
+}</string>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="textVisible">
+         <bool>false</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="OutputText">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>40</y>
+          <width>60</width>
+          <height>260</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>assets/OutputArtboard.png</pixmap>
+        </property>
+       </widget>
+       <zorder>IVBackground</zorder>
+       <zorder>IVHP</zorder>
+       <zorder>IVAtk</zorder>
+       <zorder>IVDef</zorder>
+       <zorder>IVSpAtk</zorder>
+       <zorder>IVSpDef</zorder>
+       <zorder>IVSpd</zorder>
+       <zorder>OutputText</zorder>
       </widget>
       <widget class="QFrame" name="PokemonCard">
        <property name="geometry">
@@ -482,7 +691,7 @@ border-radius: 60px;
        <widget class="QSlider" name="GenSlider">
         <property name="geometry">
          <rect>
-          <x>130</x>
+          <x>140</x>
           <y>280</y>
           <width>371</width>
           <height>22</height>
@@ -522,7 +731,7 @@ border-radius: 60px;
        <widget class="QSlider" name="SubjectsSlider">
         <property name="geometry">
          <rect>
-          <x>130</x>
+          <x>140</x>
           <y>140</y>
           <width>371</width>
           <height>22</height>
@@ -578,7 +787,7 @@ border-radius: 60px;
        <widget class="QLabel" name="VariablesText">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>40</x>
           <y>60</y>
           <width>60</width>
           <height>260</height>
@@ -594,7 +803,7 @@ border-radius: 60px;
        <widget class="QLabel" name="SubjectsStatus">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>560</x>
           <y>120</y>
           <width>51</width>
           <height>51</height>
@@ -611,7 +820,7 @@ color: rgb(255, 255, 255);</string>
        <widget class="QLabel" name="GenLabel">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>130</x>
           <y>200</y>
           <width>491</width>
           <height>51</height>
@@ -628,7 +837,7 @@ color: rgb(255, 255, 255);</string>
        <widget class="QLabel" name="GenStatus">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>560</x>
           <y>260</y>
           <width>51</width>
           <height>51</height>
@@ -645,7 +854,7 @@ color: rgb(255, 255, 255);</string>
        <widget class="QLabel" name="PokemonSprite">
         <property name="geometry">
          <rect>
-          <x>1110</x>
+          <x>1140</x>
           <y>40</y>
           <width>300</width>
           <height>300</height>
@@ -658,13 +867,13 @@ color: rgb(255, 255, 255);</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>assets/torchic.png</pixmap>
+         <pixmap>assets/Torchic.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="SubjectsLabel">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>130</x>
           <y>60</y>
           <width>421</width>
           <height>51</height>
@@ -680,12 +889,61 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </widget>
       <zorder>PokemonCard</zorder>
-      <zorder>IVStats</zorder>
+      <zorder>IVCard</zorder>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>SubjectsSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SubjectsStatus</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>610</x>
+     <y>275</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GenSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GenStatus</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>420</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>610</x>
+     <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Pokemon_ComboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>PokemonSprite</receiver>
+   <slot>setStyleSheet(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1349</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1314</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

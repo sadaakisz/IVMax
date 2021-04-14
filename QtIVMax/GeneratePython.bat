@@ -1,1 +1,1 @@
-pyuic5 qtdesignerivmax.ui > mainUI2.py
+pyuic5 -x qtdesignerivmax.ui -o mainUI2.py

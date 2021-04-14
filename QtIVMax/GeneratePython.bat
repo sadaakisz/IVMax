@@ -1,0 +1,1 @@
+pyuic5 qtdesignerivmax.ui > mainUI2.py

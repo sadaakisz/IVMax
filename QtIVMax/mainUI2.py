@@ -150,6 +150,20 @@ class Ui_IVMax(object):
         self.Pokemon_Line.setLineWidth(3)
         self.Pokemon_Line.setFrameShape(QtWidgets.QFrame.HLine)
         self.Pokemon_Line.setObjectName("Pokemon_Line")
+        self.Rights = QtWidgets.QLabel(self.Top_Bar)
+        self.Rights.setGeometry(QtCore.QRect(246, 47, 271, 21))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(12)
+        font.setItalic(True)
+        self.Rights.setFont(font)
+        self.Rights.setAutoFillBackground(False)
+        self.Rights.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.Rights.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.Rights.setObjectName("Rights")
         self.verticalLayout.addWidget(self.Top_Bar)
         self.Content = QtWidgets.QFrame(self.centralwidget)
         self.Content.setStyleSheet("QFrame{\n"
@@ -177,7 +191,8 @@ class Ui_IVMax(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border: 0px transparent;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0.52, y1:1, x2:0.514, y2:0, stop:0 rgba(220, 64, 82, 255), stop:1 rgba(248, 185, 73, 255));\n"
 "    border-radius: 6px;\n"
 "}")
         self.IVHP.setProperty("value", 50)
@@ -200,7 +215,8 @@ class Ui_IVMax(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border: 0px transparent;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0.446, y1:1, x2:0.554, y2:0, stop:0 rgba(255, 143, 75, 255), stop:1 rgba(213, 188, 62, 255));\n"
 "    border-radius: 6px;\n"
 "}")
         self.IVAtk.setProperty("value", 50)
@@ -217,7 +233,8 @@ class Ui_IVMax(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border: 0px transparent;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0.497, y1:1, x2:0.452, y2:0, stop:0 rgba(199, 200, 58, 255), stop:1 rgba(163, 255, 75, 255));\n"
 "    border-radius: 6px;\n"
 "}")
         self.IVDef.setProperty("value", 50)
@@ -234,7 +251,8 @@ class Ui_IVMax(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border: 0px transparent;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));\n"
+"    \n"
+"    background-color: qlineargradient(spread:pad, x1:0.537, y1:1, x2:0.497, y2:0.00568182, stop:0 rgba(133, 255, 75, 255), stop:1 rgba(75, 255, 199, 255));\n"
 "    border-radius: 6px;\n"
 "}")
         self.IVSpAtk.setProperty("value", 50)
@@ -251,7 +269,7 @@ class Ui_IVMax(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border: 0px transparent;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));\n"
+"    background-color: qlineargradient(spread:pad, x1:0.503, y1:1, x2:0.458, y2:0, stop:0 rgba(75, 221, 255, 255), stop:1 rgba(103, 75, 255, 255));\n"
 "    border-radius: 6px;\n"
 "}")
         self.IVSpDef.setProperty("value", 50)
@@ -268,7 +286,7 @@ class Ui_IVMax(object):
 "\n"
 "QProgressBar::chunk {\n"
 "    border: 0px transparent;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));\n"
+"    background-color: qlineargradient(spread:pad, x1:0.581921, y1:1, x2:0.514, y2:0, stop:0 rgba(133, 75, 255, 255), stop:1 rgba(255, 75, 219, 255));\n"
 "    border-radius: 6px;\n"
 "}")
         self.IVSpd.setProperty("value", 50)
@@ -280,6 +298,113 @@ class Ui_IVMax(object):
         self.OutputText.setText("")
         self.OutputText.setPixmap(QtGui.QPixmap("assets/OutputArtboard.png"))
         self.OutputText.setObjectName("OutputText")
+        self.IVHPLabel = QtWidgets.QLabel(self.IVCard)
+        self.IVHPLabel.setGeometry(QtCore.QRect(150, 175, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        self.IVHPLabel.setFont(font)
+        self.IVHPLabel.setAutoFillBackground(False)
+        self.IVHPLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.IVHPLabel.setObjectName("IVHPLabel")
+        self.IVAtkLabel = QtWidgets.QLabel(self.IVCard)
+        self.IVAtkLabel.setGeometry(QtCore.QRect(370, 175, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        self.IVAtkLabel.setFont(font)
+        self.IVAtkLabel.setAutoFillBackground(False)
+        self.IVAtkLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.IVAtkLabel.setObjectName("IVAtkLabel")
+        self.IVDefLabel = QtWidgets.QLabel(self.IVCard)
+        self.IVDefLabel.setGeometry(QtCore.QRect(590, 175, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        self.IVDefLabel.setFont(font)
+        self.IVDefLabel.setAutoFillBackground(False)
+        self.IVDefLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.IVDefLabel.setObjectName("IVDefLabel")
+        self.IVSpAtkLabel = QtWidgets.QLabel(self.IVCard)
+        self.IVSpAtkLabel.setGeometry(QtCore.QRect(810, 175, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        self.IVSpAtkLabel.setFont(font)
+        self.IVSpAtkLabel.setAutoFillBackground(False)
+        self.IVSpAtkLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.IVSpAtkLabel.setObjectName("IVSpAtkLabel")
+        self.IVSpDefLabel = QtWidgets.QLabel(self.IVCard)
+        self.IVSpDefLabel.setGeometry(QtCore.QRect(1030, 175, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        self.IVSpDefLabel.setFont(font)
+        self.IVSpDefLabel.setAutoFillBackground(False)
+        self.IVSpDefLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.IVSpDefLabel.setObjectName("IVSpDefLabel")
+        self.IVSpLabel = QtWidgets.QLabel(self.IVCard)
+        self.IVSpLabel.setGeometry(QtCore.QRect(1250, 175, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        self.IVSpLabel.setFont(font)
+        self.IVSpLabel.setAutoFillBackground(False)
+        self.IVSpLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.IVSpLabel.setObjectName("IVSpLabel")
+        self.ActualGenLabel = QtWidgets.QLabel(self.IVCard)
+        self.ActualGenLabel.setGeometry(QtCore.QRect(20, 240, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(42)
+        font.setItalic(True)
+        font.setUnderline(True)
+        self.ActualGenLabel.setFont(font)
+        self.ActualGenLabel.setAutoFillBackground(False)
+        self.ActualGenLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.ActualGenLabel.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.ActualGenLabel.setObjectName("ActualGenLabel")
+        self.ActualGenText = QtWidgets.QLabel(self.IVCard)
+        self.ActualGenText.setGeometry(QtCore.QRect(20, 190, 71, 51))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(22)
+        font.setItalic(True)
+        self.ActualGenText.setFont(font)
+        self.ActualGenText.setAutoFillBackground(False)
+        self.ActualGenText.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.ActualGenText.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.ActualGenText.setObjectName("ActualGenText")
         self.IVBackground.raise_()
         self.IVHP.raise_()
         self.IVAtk.raise_()
@@ -288,6 +413,14 @@ class Ui_IVMax(object):
         self.IVSpDef.raise_()
         self.IVSpd.raise_()
         self.OutputText.raise_()
+        self.IVHPLabel.raise_()
+        self.IVAtkLabel.raise_()
+        self.IVDefLabel.raise_()
+        self.IVSpAtkLabel.raise_()
+        self.IVSpDefLabel.raise_()
+        self.IVSpLabel.raise_()
+        self.ActualGenLabel.raise_()
+        self.ActualGenText.raise_()
         self.PokemonCard = QtWidgets.QFrame(self.Content)
         self.PokemonCard.setGeometry(QtCore.QRect(25, 30, 1450, 391))
         self.PokemonCard.setStyleSheet("QFrame{\n"
@@ -359,6 +492,89 @@ class Ui_IVMax(object):
         self.SubjectsLabel.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
 "color: rgb(255, 255, 255);")
         self.SubjectsLabel.setObjectName("SubjectsLabel")
+        self.HpLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.HpLabel.setGeometry(QtCore.QRect(730, 110, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(26)
+        font.setItalic(True)
+        self.HpLabel.setFont(font)
+        self.HpLabel.setAutoFillBackground(False)
+        self.HpLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.HpLabel.setObjectName("HpLabel")
+        self.AtkLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.AtkLabel.setGeometry(QtCore.QRect(870, 110, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(26)
+        font.setItalic(True)
+        self.AtkLabel.setFont(font)
+        self.AtkLabel.setAutoFillBackground(False)
+        self.AtkLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.AtkLabel.setObjectName("AtkLabel")
+        self.DefLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.DefLabel.setGeometry(QtCore.QRect(1010, 110, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(26)
+        font.setItalic(True)
+        self.DefLabel.setFont(font)
+        self.DefLabel.setAutoFillBackground(False)
+        self.DefLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.DefLabel.setObjectName("DefLabel")
+        self.SpAtkLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.SpAtkLabel.setGeometry(QtCore.QRect(730, 263, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(26)
+        font.setItalic(True)
+        self.SpAtkLabel.setFont(font)
+        self.SpAtkLabel.setAutoFillBackground(False)
+        self.SpAtkLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.SpAtkLabel.setObjectName("SpAtkLabel")
+        self.SpDefLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.SpDefLabel.setGeometry(QtCore.QRect(870, 263, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(26)
+        font.setItalic(True)
+        self.SpDefLabel.setFont(font)
+        self.SpDefLabel.setAutoFillBackground(False)
+        self.SpDefLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.SpDefLabel.setObjectName("SpDefLabel")
+        self.VelLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.VelLabel.setGeometry(QtCore.QRect(1010, 263, 81, 41))
+        font = QtGui.QFont()
+        font.setFamily("Gilroy-BoldItalic")
+        font.setPointSize(26)
+        font.setItalic(True)
+        self.VelLabel.setFont(font)
+        self.VelLabel.setAutoFillBackground(False)
+        self.VelLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: transparent\n"
+"\n"
+"")
+        self.VelLabel.setObjectName("VelLabel")
+        self.designedBy = QtWidgets.QLabel(self.PokemonCard)
+        self.designedBy.setGeometry(QtCore.QRect(1400, 80, 40, 241))
+        self.designedBy.setText("")
+        self.designedBy.setPixmap(QtGui.QPixmap("assets/designedByArtboard.png"))
+        self.designedBy.setObjectName("designedBy")
         self.PokemonCard.raise_()
         self.IVCard.raise_()
         self.verticalLayout.addWidget(self.Content)
@@ -377,10 +593,25 @@ class Ui_IVMax(object):
         self.Pokemon_ComboBox.setItemText(0, _translate("IVMax", "Torchic"))
         self.Pokemon_ComboBox.setItemText(1, _translate("IVMax", "Squirtle"))
         self.Pokemon_ComboBox.setItemText(2, _translate("IVMax", "Turtwig"))
+        self.Rights.setText(_translate("IVMax", "by: Overthimker. All rights reserved."))
+        self.IVHPLabel.setText(_translate("IVMax", "29"))
+        self.IVAtkLabel.setText(_translate("IVMax", "29"))
+        self.IVDefLabel.setText(_translate("IVMax", "29"))
+        self.IVSpAtkLabel.setText(_translate("IVMax", "29"))
+        self.IVSpDefLabel.setText(_translate("IVMax", "29"))
+        self.IVSpLabel.setText(_translate("IVMax", "29"))
+        self.ActualGenLabel.setText(_translate("IVMax", "0"))
+        self.ActualGenText.setText(_translate("IVMax", "Gen:"))
         self.SubjectsStatus.setText(_translate("IVMax", "4"))
         self.GenLabel.setText(_translate("IVMax", "Number of Generations:"))
         self.GenStatus.setText(_translate("IVMax", "2"))
         self.SubjectsLabel.setText(_translate("IVMax", "Number of Pokémon:"))
+        self.HpLabel.setText(_translate("IVMax", "45"))
+        self.AtkLabel.setText(_translate("IVMax", "60"))
+        self.DefLabel.setText(_translate("IVMax", "40"))
+        self.SpAtkLabel.setText(_translate("IVMax", "70"))
+        self.SpDefLabel.setText(_translate("IVMax", "50"))
+        self.VelLabel.setText(_translate("IVMax", "45"))
 
 
 if __name__ == "__main__":

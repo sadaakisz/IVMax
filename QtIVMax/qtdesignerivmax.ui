@@ -455,6 +455,10 @@ background-color: rgb(38, 36, 68);
         <string notr="true">QFrame{
 background-color: rgb(33, 31, 63);
 border-radius: 60px;
+}
+QLabel{
+color: white;
+background-color: transparent;
 }</string>
        </property>
        <property name="frameShape">
@@ -889,8 +893,7 @@ background-color: transparent
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);
-background-color: transparent
+         <string notr="true">
 
 </string>
         </property>
@@ -963,6 +966,10 @@ background-color: transparent
         <string notr="true">QFrame{
 background-color: rgb(33, 31, 63);
 border-radius: 60px;
+}
+QLabel{
+color: white;
+background-color: transparent;
 }</string>
        </property>
        <property name="frameShape">

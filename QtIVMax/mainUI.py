@@ -12,15 +12,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+class Ui_IVMax(object):
+    def setupUi(self, IVMax):
         dirname = os.path.dirname(__file__)
 
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1500, 900)
-        MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
-        MainWindow.setStyleSheet("background-color: rgb(45, 45, 45);")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        IVMax.setObjectName("IVMax")
+        IVMax.resize(1500, 900)
+        IVMax.setMinimumSize(QtCore.QSize(1000, 500))
+        IVMax.setStyleSheet("QMainWindow{\n"
+"background-color: rgb(45, 45, 45);\n"
+"}")
+        self.centralwidget = QtWidgets.QWidget(IVMax)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -28,22 +30,35 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.Top_Bar = QtWidgets.QFrame(self.centralwidget)
         self.Top_Bar.setMaximumSize(QtCore.QSize(16777215, 100))
-        self.Top_Bar.setStyleSheet("background-color:rgb(35, 35, 35);")
+        self.Top_Bar.setStyleSheet("QFrame{\n"
+"background-color:rgb(35, 35, 35);\n"
+"}\n"
+"QComboBox {\n"
+"color: rgb(255, 255, 255);\n"
+"selection-color: rgb(0, 255, 255);\n"
+"border: 0px transparent;\n"
+"padding: 1px, 1px, 1px, 1px;\n"
+"background-color: rgb(35, 35, 35);\n"
+"}\n"
+"QListView {\n"
+"color:white;\n"
+"background-color: rgb(35, 35, 35);\n"
+"}")
         self.Top_Bar.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.Top_Bar.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Top_Bar.setObjectName("Top_Bar")
-        self.label = QtWidgets.QLabel(self.Top_Bar)
-        self.label.setGeometry(QtCore.QRect(40, 20, 61, 61))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(dirname+"/assets/60IVMaxLogoArtboard 1.png"))
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.Top_Bar)
-        self.label_2.setGeometry(QtCore.QRect(130, 27, 121, 41))
-        self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap(dirname+"/assets/60IVMaxLetterArtboard 1.png"))
-        self.label_2.setObjectName("label_2")
-        self.comboBox = QtWidgets.QComboBox(self.Top_Bar)
-        self.comboBox.setGeometry(QtCore.QRect(1230, 18, 240, 70))
+        self.AppIcon = QtWidgets.QLabel(self.Top_Bar)
+        self.AppIcon.setGeometry(QtCore.QRect(40, 20, 61, 61))
+        self.AppIcon.setText("")
+        self.AppIcon.setPixmap(QtGui.QPixmap(dirname+"/assets/60IVMaxLogoArtboard.png"))
+        self.AppIcon.setObjectName("AppIcon")
+        self.AppIconLetters = QtWidgets.QLabel(self.Top_Bar)
+        self.AppIconLetters.setGeometry(QtCore.QRect(130, 27, 121, 41))
+        self.AppIconLetters.setText("")
+        self.AppIconLetters.setPixmap(QtGui.QPixmap(dirname+"/assets/60IVMaxLetterArtboard.png"))
+        self.AppIconLetters.setObjectName("AppIconLetters")
+        self.Pokemon_ComboBox = QtWidgets.QComboBox(self.Top_Bar)
+        self.Pokemon_ComboBox.setGeometry(QtCore.QRect(1230, 18, 240, 70))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -63,6 +78,9 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(35, 35, 35))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.HighlightedText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
@@ -81,6 +99,9 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(35, 35, 35))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.HighlightedText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
@@ -99,7 +120,10 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(35, 35, 35))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
-        self.comboBox.setPalette(palette)
+        brush = QtGui.QBrush(QtGui.QColor(0, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.HighlightedText, brush)
+        self.Pokemon_ComboBox.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Gilroy-MediumItalic")
         font.setPointSize(32)
@@ -107,29 +131,33 @@ class Ui_MainWindow(object):
         font.setUnderline(False)
         font.setKerning(True)
         font.setStyleStrategy(QtGui.QFont.PreferAntialias)
-        self.comboBox.setFont(font)
-        self.comboBox.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.comboBox.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
-        self.comboBox.setAutoFillBackground(False)
-        self.comboBox.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border: 0px solid;")
-        self.comboBox.setEditable(False)
-        self.comboBox.setMaxCount(3)
-        self.comboBox.setIconSize(QtCore.QSize(16, 16))
-        self.comboBox.setFrame(False)
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.line = QtWidgets.QFrame(self.Top_Bar)
-        self.line.setGeometry(QtCore.QRect(1215, 85, 240, 2))
-        self.line.setStyleSheet("color: rgb(255, 255, 255);")
-        self.line.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.line.setLineWidth(3)
-        self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setObjectName("line")
+        self.Pokemon_ComboBox.setFont(font)
+        self.Pokemon_ComboBox.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.Pokemon_ComboBox.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.Pokemon_ComboBox.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.Pokemon_ComboBox.setAutoFillBackground(False)
+        self.Pokemon_ComboBox.setStyleSheet("")
+        self.Pokemon_ComboBox.setEditable(False)
+        self.Pokemon_ComboBox.setMaxCount(3)
+        self.Pokemon_ComboBox.setInsertPolicy(QtWidgets.QComboBox.NoInsert)
+        self.Pokemon_ComboBox.setIconSize(QtCore.QSize(16, 16))
+        self.Pokemon_ComboBox.setFrame(False)
+        self.Pokemon_ComboBox.setObjectName("Pokemon_ComboBox")
+        self.Pokemon_ComboBox.addItem("")
+        self.Pokemon_ComboBox.addItem("")
+        self.Pokemon_ComboBox.addItem("")
+        self.Pokemon_Line = QtWidgets.QFrame(self.Top_Bar)
+        self.Pokemon_Line.setGeometry(QtCore.QRect(1213, 76, 240, 16))
+        self.Pokemon_Line.setStyleSheet("color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 150, 214, 255), stop:1 rgba(202, 71, 255, 255));")
+        self.Pokemon_Line.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.Pokemon_Line.setLineWidth(3)
+        self.Pokemon_Line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.Pokemon_Line.setObjectName("Pokemon_Line")
         self.verticalLayout.addWidget(self.Top_Bar)
         self.Content = QtWidgets.QFrame(self.centralwidget)
+        self.Content.setStyleSheet("QFrame{\n"
+"background-color: rgb(45, 45, 45);\n"
+"}")
         self.Content.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.Content.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Content.setObjectName("Content")
@@ -148,11 +176,11 @@ class Ui_MainWindow(object):
         self.SubjectsLabel.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
 "color: rgb(255, 255, 255);")
         self.SubjectsLabel.setObjectName("SubjectsLabel")
-        self.NSubjSlider = QtWidgets.QLabel(self.Content)
-        self.NSubjSlider.setGeometry(QtCore.QRect(490, 90, 31, 51))
-        self.NSubjSlider.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
+        self.SubjectsStatus = QtWidgets.QLabel(self.Content)
+        self.SubjectsStatus.setGeometry(QtCore.QRect(490, 90, 31, 51))
+        self.SubjectsStatus.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
 "color: rgb(255, 255, 255);")
-        self.NSubjSlider.setObjectName("NSubjSlider")
+        self.SubjectsStatus.setObjectName("SubjectsStatus")
         self.GenLabel = QtWidgets.QLabel(self.Content)
         self.GenLabel.setGeometry(QtCore.QRect(60, 170, 491, 51))
         self.GenLabel.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
@@ -169,35 +197,35 @@ class Ui_MainWindow(object):
         self.GenSlider.setInvertedAppearance(False)
         self.GenSlider.setInvertedControls(False)
         self.GenSlider.setObjectName("GenSlider")
-        self.NGenjSlider = QtWidgets.QLabel(self.Content)
-        self.NGenjSlider.setGeometry(QtCore.QRect(490, 235, 31, 51))
-        self.NGenjSlider.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
+        self.GenStatus = QtWidgets.QLabel(self.Content)
+        self.GenStatus.setGeometry(QtCore.QRect(490, 235, 31, 51))
+        self.GenStatus.setStyleSheet("font: italic 32pt \"Gilroy-BoldItalic\";\n"
 "color: rgb(255, 255, 255);")
-        self.NGenjSlider.setObjectName("NGenjSlider")
+        self.GenStatus.setObjectName("GenStatus")
         self.verticalLayout.addWidget(self.Content)
-        MainWindow.setCentralWidget(self.centralwidget)
+        IVMax.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
-        self.comboBox.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(IVMax)
+        self.Pokemon_ComboBox.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(IVMax)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, IVMax):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "Torchic"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "Squirtle"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "Turtwig"))
-        self.SubjectsLabel.setText(_translate("MainWindow", "Number of Pokémon:"))
-        self.NSubjSlider.setText(_translate("MainWindow", "4"))
-        self.GenLabel.setText(_translate("MainWindow", "Number of Generations:"))
-        self.NGenjSlider.setText(_translate("MainWindow", "2"))
+        IVMax.setWindowTitle(_translate("IVMax", "MainWindow"))
+        self.Pokemon_ComboBox.setItemText(0, _translate("IVMax", "Torchic"))
+        self.Pokemon_ComboBox.setItemText(1, _translate("IVMax", "Squirtle"))
+        self.Pokemon_ComboBox.setItemText(2, _translate("IVMax", "Turtwig"))
+        self.SubjectsLabel.setText(_translate("IVMax", "Number of Pokémon:"))
+        self.SubjectsStatus.setText(_translate("IVMax", "4"))
+        self.GenLabel.setText(_translate("IVMax", "Number of Generations:"))
+        self.GenStatus.setText(_translate("IVMax", "2"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    IVMax = QtWidgets.QMainWindow()
+    ui = Ui_IVMax()
+    ui.setupUi(IVMax)
+    IVMax.show()
     sys.exit(app.exec_())

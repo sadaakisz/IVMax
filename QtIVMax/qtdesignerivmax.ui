@@ -658,6 +658,180 @@ QProgressBar::chunk {
          <pixmap>assets/OutputArtboard.png</pixmap>
         </property>
        </widget>
+       <widget class="QLabel" name="IVHPLabel">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>190</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>30</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="IVAtkLabel">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>190</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>30</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="IVDefLabel">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>190</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>30</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="IVSpAtkLabel">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>190</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>30</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="IVSpDefLabel">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>190</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>30</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="IVSpLabel">
+        <property name="geometry">
+         <rect>
+          <x>1270</x>
+          <y>190</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>30</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </widget>
        <zorder>IVBackground</zorder>
        <zorder>IVHP</zorder>
        <zorder>IVAtk</zorder>
@@ -666,6 +840,12 @@ QProgressBar::chunk {
        <zorder>IVSpDef</zorder>
        <zorder>IVSpd</zorder>
        <zorder>OutputText</zorder>
+       <zorder>IVHPLabel</zorder>
+       <zorder>IVAtkLabel</zorder>
+       <zorder>IVDefLabel</zorder>
+       <zorder>IVSpAtkLabel</zorder>
+       <zorder>IVSpDefLabel</zorder>
+       <zorder>IVSpLabel</zorder>
       </widget>
       <widget class="QFrame" name="PokemonCard">
        <property name="geometry">

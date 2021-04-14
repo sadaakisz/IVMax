@@ -413,17 +413,17 @@ background-color: rgb(45, 45, 45);
       <widget class="QSlider" name="SubjectsSlider">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>110</y>
+         <x>120</x>
+         <y>130</y>
          <width>371</width>
          <height>22</height>
         </rect>
        </property>
        <property name="minimum">
-        <number>4</number>
+        <number>2</number>
        </property>
        <property name="maximum">
-        <number>16</number>
+        <number>8</number>
        </property>
        <property name="singleStep">
         <number>2</number>
@@ -440,12 +440,18 @@ background-color: rgb(45, 45, 45);
        <property name="invertedControls">
         <bool>false</bool>
        </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1</number>
+       </property>
       </widget>
       <widget class="QLabel" name="SubjectsLabel">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>30</y>
+         <x>110</x>
+         <y>50</y>
          <width>421</width>
          <height>51</height>
         </rect>
@@ -461,9 +467,9 @@ color: rgb(255, 255, 255);</string>
       <widget class="QLabel" name="SubjectsStatus">
        <property name="geometry">
         <rect>
-         <x>490</x>
-         <y>90</y>
-         <width>31</width>
+         <x>540</x>
+         <y>110</y>
+         <width>51</width>
          <height>51</height>
         </rect>
        </property>
@@ -478,8 +484,8 @@ color: rgb(255, 255, 255);</string>
       <widget class="QLabel" name="GenLabel">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>170</y>
+         <x>110</x>
+         <y>190</y>
          <width>491</width>
          <height>51</height>
         </rect>
@@ -495,8 +501,8 @@ color: rgb(255, 255, 255);</string>
       <widget class="QSlider" name="GenSlider">
        <property name="geometry">
         <rect>
-         <x>75</x>
-         <y>255</y>
+         <x>120</x>
+         <y>270</y>
          <width>371</width>
          <height>22</height>
         </rect>
@@ -525,13 +531,19 @@ color: rgb(255, 255, 255);</string>
        <property name="invertedControls">
         <bool>false</bool>
        </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBelow</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1</number>
+       </property>
       </widget>
       <widget class="QLabel" name="GenStatus">
        <property name="geometry">
         <rect>
-         <x>490</x>
-         <y>235</y>
-         <width>31</width>
+         <x>540</x>
+         <y>250</y>
+         <width>51</width>
          <height>51</height>
         </rect>
        </property>
@@ -543,11 +555,93 @@ color: rgb(255, 255, 255);</string>
         <string>2</string>
        </property>
       </widget>
+      <widget class="QLabel" name="PokemonSprite">
+       <property name="geometry">
+        <rect>
+         <x>1120</x>
+         <y>60</y>
+         <width>300</width>
+         <height>300</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="VariablesText">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>50</y>
+         <width>60</width>
+         <height>260</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>assets/VariablesArtboard.png</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="StatsBackground">
+       <property name="geometry">
+        <rect>
+         <x>820</x>
+         <y>60</y>
+         <width>300</width>
+         <height>300</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>SubjectsSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SubjectsStatus</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GenSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>GenStatus</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>365</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>515</x>
+     <y>360</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

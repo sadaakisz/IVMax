@@ -8,11 +8,7 @@ class Pokemon():
         self.name=name
         self.stats=dc(stats)
 
-PokemonList=[]
-PokemonList.append(Pokemon("Torchic", [45, 60, 40, 70, 50, 45]))
-PokemonList.append(Pokemon("Squirtle", [44, 48, 65, 50, 64, 43]))
-PokemonList.append(Pokemon("Turtwig", [55, 68, 64, 45, 55, 31]))
-
+    
 def Pairs(N):
     # Retorna una lista en orden aleatoria de la segunda mitad de los individuos
     # ej: N=8 -> [7, 6, 5, 4]
@@ -28,6 +24,11 @@ def Pairs(N):
 def Inicialization(N):
     global Subjects
     global Best
+    global PokemonList
+    PokemonList = []
+    PokemonList.append(Pokemon("Torchic", [45, 60, 40, 70, 50, 45]))
+    PokemonList.append(Pokemon("Squirtle", [44, 48, 65, 50, 64, 43]))
+    PokemonList.append(Pokemon("Turtwig", [55, 68, 64, 45, 55, 31]))
     Subjects = {}
     for i in range(N):
         Subjects[i] = np.random.choice(32,6,replace=True)
@@ -95,7 +96,7 @@ def ShowBest(N):
         if maxFit<Fitness(Subjects[i]):
             maxFit=Fitness(Subjects[i])
             index=i
-    print("Best Subject:",Subjects[index])
+    #print("Best Subject:",Subjects[index])
     return Subjects[index]
 
 def ShowStats(pkNumber, ivs):
@@ -118,11 +119,11 @@ def ShowStats(pkNumber, ivs):
 pkNumber=0
 N=6
 generations=5
-Inicialization(N)
+'''Inicialization(N)
 for i in range(generations):
     print('\nGeneration {}:'.format(i+1))
     Selection(N)
     Breed(N)
     Mutation(N)
     ShowBest(N)
-    ShowStats(pkNumber, ShowBest(N))
+    ShowStats(pkNumber, ShowBest(N))'''

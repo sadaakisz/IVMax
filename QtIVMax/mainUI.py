@@ -461,25 +461,9 @@ class Ui_IVMax(object):
 
 if __name__ == "__main__":
     import sys
-    import IVMax as backend
     app = QtWidgets.QApplication(sys.argv)
     IVMax = QtWidgets.QMainWindow()
     ui = Ui_IVMax()
     ui.setupUi(IVMax)
     IVMax.show()
-
-    pkNumber=0
-
-    N=int(ui.SubjectsStatus.text())
-    generations=int(ui.GenStatus.text())
-
-    backend.Inicialization(N)
-    for i in range(generations):
-        print('\nGeneration {}:'.format(i+1))
-        backend.Selection(N)
-        backend.Breed(N)
-        backend.Mutation(N)
-        print("Best subject:", backend.ShowBest(N))
-        backend.ShowStats(pkNumber, backend.ShowBest(N))
-
     sys.exit(app.exec_())

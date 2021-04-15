@@ -115,6 +115,7 @@ def ShowStats(pkNumber, ivs):
         stats.append(math.floor((baseStats[i]+ivs[i])*100/100)+5)
     
     print("Stats:", stats)
+    return stats
 
 pkNumber=0
 N=6

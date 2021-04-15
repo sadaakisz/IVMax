@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
+import os, time
+import IVMax as backend
 
 class Ui_IVMax(object):
     def setupUi(self, IVMax):
@@ -197,7 +198,8 @@ class Ui_IVMax(object):
                 "QProgressBar::chunk {\n"
                 "    background-color: qlineargradient(spread:pad, x1:0.52, y1:1, x2:0.514, y2:0, stop:0 rgba(220, 64, 82, 255), stop:1 rgba(248, 185, 73, 255));\n"
                 "}")
-        self.IVHP.setProperty("value", 50)
+        self.IVHP.setProperty("value", 0)
+        self.IVHP.setMaximum(31)
         self.IVHP.setTextVisible(False)
         self.IVHP.setOrientation(QtCore.Qt.Vertical)
         self.IVHP.setObjectName("IVHP")
@@ -207,7 +209,8 @@ class Ui_IVMax(object):
                 "QProgressBar::chunk {\n"
                 "    background-color: qlineargradient(spread:pad, x1:0.446, y1:1, x2:0.554, y2:0, stop:0 rgba(255, 143, 75, 255), stop:1 rgba(213, 188, 62, 255));\n"
                 "}")
-        self.IVAtk.setProperty("value", 50)
+        self.IVAtk.setProperty("value", 0)
+        self.IVAtk.setMaximum(31)
         self.IVAtk.setTextVisible(False)
         self.IVAtk.setOrientation(QtCore.Qt.Vertical)
         self.IVAtk.setObjectName("IVAtk")
@@ -217,7 +220,8 @@ class Ui_IVMax(object):
                 "QProgressBar::chunk {\n"
                 "    background-color: qlineargradient(spread:pad, x1:0.497, y1:1, x2:0.452, y2:0, stop:0 rgba(199, 200, 58, 255), stop:1 rgba(163, 255, 75, 255));\n"
                 "}")
-        self.IVDef.setProperty("value", 50)
+        self.IVDef.setProperty("value", 0)
+        self.IVDef.setMaximum(31)
         self.IVDef.setTextVisible(False)
         self.IVDef.setOrientation(QtCore.Qt.Vertical)
         self.IVDef.setObjectName("IVDef")
@@ -227,7 +231,8 @@ class Ui_IVMax(object):
                 "QProgressBar::chunk {\n"
                 "    background-color: qlineargradient(spread:pad, x1:0.537, y1:1, x2:0.497, y2:0.00568182, stop:0 rgba(133, 255, 75, 255), stop:1 rgba(75, 255, 199, 255));\n"
                 "}")
-        self.IVSpAtk.setProperty("value", 50)
+        self.IVSpAtk.setProperty("value", 0)
+        self.IVSpAtk.setMaximum(31)
         self.IVSpAtk.setTextVisible(False)
         self.IVSpAtk.setOrientation(QtCore.Qt.Vertical)
         self.IVSpAtk.setObjectName("IVSpAtk")
@@ -237,7 +242,8 @@ class Ui_IVMax(object):
                 "QProgressBar::chunk {\n"
                 "    background-color: qlineargradient(spread:pad, x1:0.503, y1:1, x2:0.458, y2:0, stop:0 rgba(75, 221, 255, 255), stop:1 rgba(103, 75, 255, 255));\n"
                 "}")
-        self.IVSpDef.setProperty("value", 50)
+        self.IVSpDef.setProperty("value", 0)
+        self.IVSpDef.setMaximum(31)
         self.IVSpDef.setTextVisible(False)
         self.IVSpDef.setOrientation(QtCore.Qt.Vertical)
         self.IVSpDef.setObjectName("IVSpDef")
@@ -247,7 +253,8 @@ class Ui_IVMax(object):
                 "QProgressBar::chunk {\n"
                 "    background-color: qlineargradient(spread:pad, x1:0.581921, y1:1, x2:0.514, y2:0, stop:0 rgba(133, 75, 255, 255), stop:1 rgba(255, 75, 219, 255));\n"
                 "}")
-        self.IVSpd.setProperty("value", 50)
+        self.IVSpd.setProperty("value", 0)
+        self.IVSpd.setMaximum(31)
         self.IVSpd.setTextVisible(False)
         self.IVSpd.setOrientation(QtCore.Qt.Vertical)
         self.IVSpd.setObjectName("IVSpd")
@@ -281,6 +288,8 @@ class Ui_IVMax(object):
         self.IVSpLabel.setFont(font)
         self.IVSpLabel.setObjectName("IVSpLabel")
         # endregion
+        # region Generations
+        font.setUnderline(True)
         self.ActualGenLabel = QtWidgets.QLabel(self.IVCard)
         self.ActualGenLabel.setGeometry(QtCore.QRect(20, 240, 71, 51))
         self.ActualGenLabel.setFont(font)
@@ -291,9 +300,11 @@ class Ui_IVMax(object):
         font.setFamily("Gilroy-BoldItalic")
         font.setPointSize(22)
         font.setItalic(True)
+        font.setUnderline(False)
         self.ActualGenText.setFont(font)
         self.ActualGenText.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.ActualGenText.setObjectName("ActualGenText")
+        # endregion
         # region RaiseElements()
         self.IVBackground.raise_()
         self.IVHP.raise_()
@@ -425,6 +436,21 @@ class Ui_IVMax(object):
         self.designedBy.setPixmap(QtGui.QPixmap(dirname+"assets/designedByArtboard.png"))
         self.designedBy.setObjectName("designedBy")
         # endregion
+        # region Fitness
+        self.FitText = QtWidgets.QLabel(self.PokemonCard)
+        self.FitText.setGeometry(QtCore.QRect(20, 260, 71, 51))
+        font.setPointSize(22)
+        self.FitText.setFont(font)
+        self.FitText.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.FitText.setObjectName("FitText")
+        self.FitLabel = QtWidgets.QLabel(self.PokemonCard)
+        self.FitLabel.setGeometry(QtCore.QRect(20, 310, 91, 51))
+        font.setPointSize(42)
+        font.setUnderline(True)
+        self.FitLabel.setFont(font)
+        self.FitLabel.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.FitLabel.setObjectName("FitLabel")
+        # endregion
         # region Raise()
         self.PokemonCard.raise_()
         self.IVCard.raise_()
@@ -440,7 +466,7 @@ class Ui_IVMax(object):
         self.SubjectsSlider.valueChanged['int'].connect(lambda _: setattr(self, 'N', self.SubjectsSlider.value() * 2))
         self.GenSlider.valueChanged['int'].connect(self.GenStatus.setNum)
         self.GenSlider.valueChanged['int'].connect(lambda _: setattr(self, 'generations', self.GenSlider.value()))
-        self.GenSlider.valueChanged['int'].connect(lambda: print(self.generations))
+        self.GenSlider.valueChanged['int'].connect(lambda: self.runBackend(self.PkIndex, self.N, self.generations))
         self.Pokemon_ComboBox.currentTextChanged['QString'].connect(lambda: self.PokemonSprite.setPixmap(QtGui.QPixmap(dirname+"assets/"+self.Pokemon_ComboBox.currentText()+".png")))
         self.Pokemon_ComboBox.currentTextChanged['QString'].connect(lambda _: setattr(self, 'PkIndex', self.PkDict[self.Pokemon_ComboBox.currentText()]))
         QtCore.QMetaObject.connectSlotsByName(IVMax)
@@ -452,12 +478,12 @@ class Ui_IVMax(object):
         self.Pokemon_ComboBox.setItemText(1, _translate("IVMax", "Squirtle"))
         self.Pokemon_ComboBox.setItemText(2, _translate("IVMax", "Turtwig"))
         self.Rights.setText(_translate("IVMax", "by: Overthimker. All rights reserved."))
-        self.IVHPLabel.setText(_translate("IVMax", "29"))
-        self.IVAtkLabel.setText(_translate("IVMax", "29"))
-        self.IVDefLabel.setText(_translate("IVMax", "29"))
-        self.IVSpAtkLabel.setText(_translate("IVMax", "29"))
-        self.IVSpDefLabel.setText(_translate("IVMax", "29"))
-        self.IVSpLabel.setText(_translate("IVMax", "29"))
+        self.IVHPLabel.setText(_translate("IVMax", "0"))
+        self.IVAtkLabel.setText(_translate("IVMax", "0"))
+        self.IVDefLabel.setText(_translate("IVMax", "0"))
+        self.IVSpAtkLabel.setText(_translate("IVMax", "0"))
+        self.IVSpDefLabel.setText(_translate("IVMax", "0"))
+        self.IVSpLabel.setText(_translate("IVMax", "0"))
         self.ActualGenLabel.setText(_translate("IVMax", "0"))
         self.ActualGenText.setText(_translate("IVMax", "Gen:"))
         self.SubjectsStatus.setText(_translate("IVMax", "4"))
@@ -470,28 +496,67 @@ class Ui_IVMax(object):
         self.SpAtkLabel.setText(_translate("IVMax", "70"))
         self.SpDefLabel.setText(_translate("IVMax", "50"))
         self.VelLabel.setText(_translate("IVMax", "45"))
+        self.FitText.setText(_translate("IVMax", "Fit:"))
+        self.FitLabel.setText(_translate("IVMax", "0"))
 
+    def runBackend(self, pkIndex, N, generations):
+        def repaint():
+                self.IVHPLabel.repaint()
+                self.IVAtkLabel.repaint()
+                self.IVDefLabel.repaint()
+                self.IVSpAtkLabel.repaint()
+                self.IVSpDefLabel.repaint()
+                self.IVSpLabel.repaint()
+                self.IVHP.repaint()
+                self.IVAtk.repaint()
+                self.IVDef.repaint()
+                self.IVSpAtk.repaint()
+                self.IVSpDef.repaint()
+                self.IVSpd.repaint()
+                self.HpLabel.repaint()
+                self.AtkLabel.repaint()
+                self.DefLabel.repaint()
+                self.SpAtkLabel.repaint()
+                self.SpDefLabel.repaint()
+                self.VelLabel.repaint()
+        
+        repaint()
+        backend.Inicialization(N)
+        for i in range(generations):
+                ui.ActualGenLabel.setText(str(i+1))
+                backend.Selection(N)
+                backend.Breed(N)
+                backend.Mutation(N)
+                best=backend.ShowBest(N)
+                print("Best subject:", best)
+                self.IVHPLabel.setText(str(best[0]))
+                self.IVAtkLabel.setText(str(best[1]))
+                self.IVDefLabel.setText(str(best[2]))
+                self.IVSpAtkLabel.setText(str(best[3]))
+                self.IVSpDefLabel.setText(str(best[4])) 
+                self.IVSpLabel.setText(str(best[5]))
+                self.IVHP.setValue(best[0])
+                self.IVAtk.setValue(best[1])
+                self.IVDef.setValue(best[2])
+                self.IVSpAtk.setValue(best[3])
+                self.IVSpDef.setValue(best[4])
+                self.IVSpd.setValue(best[5])
+                self.FitLabel.setText(str(sum(best)))
+                stats=backend.ShowStats(pkIndex, best)
+                self.HpLabel.setText(str(stats[0]))
+                self.AtkLabel.setText(str(stats[1]))
+                self.DefLabel.setText(str(stats[2]))
+                self.SpAtkLabel.setText(str(stats[3]))
+                self.SpDefLabel.setText(str(stats[4]))
+                self.VelLabel.setText(str(stats[5]))
+                repaint()
+                time.sleep(1)
 
 if __name__ == "__main__":
     import sys
-    import IVMax as backend
     app = QtWidgets.QApplication(sys.argv)
     IVMax = QtWidgets.QMainWindow()
     ui = Ui_IVMax()
     ui.setupUi(IVMax)
     IVMax.show()
-    '''pkNumber=0
-
-    N=int(ui.SubjectsStatus.text())
-    generations=int(ui.GenStatus.text())
-
-    backend.Inicialization(N)
-    for i in range(generations):
-        print('\nGeneration {}:'.format(i+1))
-        backend.Selection(N)
-        backend.Breed(N)
-        backend.Mutation(N)
-        print("Best subject:", backend.ShowBest(N))
-        backend.ShowStats(pkNumber, backend.ShowBest(N))'''
-
     sys.exit(app.exec_())

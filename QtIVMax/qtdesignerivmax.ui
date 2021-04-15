@@ -459,6 +459,15 @@ border-radius: 60px;
 QLabel{
 color: white;
 background-color: transparent;
+}
+QProgressBar{
+background-color: rgba(0, 0, 0, 120);
+border: 0px transparent;
+border-radius: 6px;
+}
+QProgressBar::chunk {
+border: 0px transparent;
+border-radius: 6px;
 }</string>
        </property>
        <property name="frameShape">

@@ -14,6 +14,14 @@ import os
 class Ui_IVMax(object):
     def setupUi(self, IVMax):
         dirname = os.path.dirname(__file__)+"/"
+        self.PkDict={}
+        self.PkDict["Torchic"]=0
+        self.PkDict["Squirtle"]=1
+        self.PkDict["Turtwig"]=2
+
+        self.PkIndex=0 #index to identify the pokemon
+        self.N=4
+        self.generations=2
 
         # region MainWindow
         IVMax.setObjectName("IVMax")
@@ -331,6 +339,7 @@ class Ui_IVMax(object):
         self.GenSlider.setOrientation(QtCore.Qt.Horizontal)
         self.GenSlider.setTickPosition(QtWidgets.QSlider.TicksBelow)
         self.GenSlider.setTickInterval(1)
+        self.GenSlider.setTracking(False)
         self.GenSlider.setObjectName("GenSlider")
         self.SubjectsSlider = QtWidgets.QSlider(self.PokemonCard)
         self.SubjectsSlider.setGeometry(QtCore.QRect(140, 140, 371, 22))
@@ -428,8 +437,12 @@ class Ui_IVMax(object):
         self.retranslateUi(IVMax)
         self.Pokemon_ComboBox.setCurrentIndex(0)
         self.SubjectsSlider.valueChanged['int'].connect(lambda: self.SubjectsStatus.setNum(self.SubjectsSlider.value() * 2))
+        self.SubjectsSlider.valueChanged['int'].connect(lambda _: setattr(self, 'N', self.SubjectsSlider.value() * 2))
         self.GenSlider.valueChanged['int'].connect(self.GenStatus.setNum)
+        self.GenSlider.valueChanged['int'].connect(lambda _: setattr(self, 'generations', self.GenSlider.value()))
+        self.GenSlider.valueChanged['int'].connect(lambda: print(self.generations))
         self.Pokemon_ComboBox.currentTextChanged['QString'].connect(lambda: self.PokemonSprite.setPixmap(QtGui.QPixmap(dirname+"assets/"+self.Pokemon_ComboBox.currentText()+".png")))
+        self.Pokemon_ComboBox.currentTextChanged['QString'].connect(lambda _: setattr(self, 'PkIndex', self.PkDict[self.Pokemon_ComboBox.currentText()]))
         QtCore.QMetaObject.connectSlotsByName(IVMax)
 
     def retranslateUi(self, IVMax):
@@ -467,8 +480,7 @@ if __name__ == "__main__":
     ui = Ui_IVMax()
     ui.setupUi(IVMax)
     IVMax.show()
-
-    pkNumber=0
+    '''pkNumber=0
 
     N=int(ui.SubjectsStatus.text())
     generations=int(ui.GenStatus.text())
@@ -480,6 +492,6 @@ if __name__ == "__main__":
         backend.Breed(N)
         backend.Mutation(N)
         print("Best subject:", backend.ShowBest(N))
-        backend.ShowStats(pkNumber, backend.ShowBest(N))
+        backend.ShowStats(pkNumber, backend.ShowBest(N))'''
 
     sys.exit(app.exec_())

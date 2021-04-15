@@ -550,7 +550,7 @@ class Ui_IVMax(object):
                 self.SpDefLabel.setText(str(stats[4]))
                 self.VelLabel.setText(str(stats[5]))
                 repaint()
-                time.sleep(1)
+                time.sleep(0.5)
 
 if __name__ == "__main__":
     import sys

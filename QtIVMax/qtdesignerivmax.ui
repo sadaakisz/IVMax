@@ -902,9 +902,7 @@ background-color: transparent
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">
-
-</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string>0</string>
@@ -1374,6 +1372,68 @@ background-color: transparent
         </property>
         <property name="pixmap">
          <pixmap>assets/designedByArtboard.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FitText">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>260</y>
+          <width>71</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>22</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: transparent
+
+</string>
+        </property>
+        <property name="text">
+         <string>Fit:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FitLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>310</y>
+          <width>91</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gilroy-BoldItalic</family>
+          <pointsize>42</pointsize>
+          <italic>true</italic>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>188</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </widget>

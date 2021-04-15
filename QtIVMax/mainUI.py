@@ -559,4 +559,6 @@ if __name__ == "__main__":
     ui = Ui_IVMax()
     ui.setupUi(IVMax)
     IVMax.show()
+    IVMax.setWindowTitle("IVMax 21.1.0")
+    IVMax.setWindowIcon(QtGui.QIcon('assets/60IVMaxLogoArtboard.png'))
     sys.exit(app.exec_())

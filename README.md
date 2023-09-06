@@ -1,4 +1,4 @@
-![Image of IVMax.](https://github.com/sadaakisz/IVMax/blob/main/RoundedFunctionGraphics.png)
+![Image of IVMax.](https://github.com/sadaakisz/IVMax/blob/main/RoundedFunctionsGraphics.png)
 
 # IVMax
 Simple and modern IV Maximizer using Genetic Algorithm.
